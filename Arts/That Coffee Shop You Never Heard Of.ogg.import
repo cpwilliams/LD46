@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/That Coffee Shop You Never Heard Of.ogg-eec592a393715c3a60893d85b2fc3fca.oggstr"
+
+[deps]
+
+source_file="res://Arts/That Coffee Shop You Never Heard Of.ogg"
+dest_files=[ "res://.import/That Coffee Shop You Never Heard Of.ogg-eec592a393715c3a60893d85b2fc3fca.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

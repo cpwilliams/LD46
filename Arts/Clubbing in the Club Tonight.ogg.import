@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Clubbing in the Club Tonight.ogg-1c7651046403f56b3b209a0a046d99ed.oggstr"
+
+[deps]
+
+source_file="res://Arts/Clubbing in the Club Tonight.ogg"
+dest_files=[ "res://.import/Clubbing in the Club Tonight.ogg-1c7651046403f56b3b209a0a046d99ed.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

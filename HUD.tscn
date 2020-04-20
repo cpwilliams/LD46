@@ -1,0 +1,799 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Arts/hypemeter.png" type="Texture" id=1]
+[ext_resource path="res://Arts/hypeoverlay.png" type="Texture" id=2]
+[ext_resource path="res://Arts/hypetext.png" type="Texture" id=3]
+[ext_resource path="res://HUD.gd" type="Script" id=4]
+[ext_resource path="res://Arts/lockscreen.png" type="Texture" id=5]
+[ext_resource path="res://Arts/BluetoothSpeakerAppIcon.png" type="Texture" id=6]
+[ext_resource path="res://Arts/CluckerAppIcon.png" type="Texture" id=7]
+[ext_resource path="res://Arts/TextAppIcon.png" type="Texture" id=8]
+[ext_resource path="res://Arts/PhoneFont.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Body.tscn" type="PackedScene" id=10]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0470588, 0.843137, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0392157, 0.258824, 0.0784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.196078, 0.0235294, 0.215686, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.0313726, 0.0313726, 0.4, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.0235294, 0.239216, 0.278431, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.0588235, 0.0196078, 0.34902, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.227451, 0.0352941, 0.337255, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.0627451, 0, 0.509804, 1 )
+
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://Arts/OxygenMono-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=14]
+size = 34
+font_data = SubResource( 13 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.176471, 0.027451, 0.262745, 1 )
+
+[sub_resource type="DynamicFontData" id=16]
+font_path = "res://Arts/OxygenMono-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=17]
+size = 40
+font_data = SubResource( 16 )
+
+[node name="Control" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 4 )
+
+[node name="HypeMeter" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="HypeMeter"]
+margin_left = 7.53131
+margin_top = 6.12565
+margin_right = 207.531
+margin_bottom = 56.1257
+rect_scale = Vector2( 1.5, 1.5 )
+value = 35.0
+texture_over = ExtResource( 2 )
+texture_progress = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="HypeMeter"]
+margin_left = 74.0
+margin_top = 76.0
+margin_right = 311.0
+margin_bottom = 106.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="HypeMeter"]
+margin_left = 82.2502
+margin_top = 77.2531
+margin_right = 305.25
+margin_bottom = 104.253
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Phone" type="Panel" parent="."]
+anchor_left = 0.763305
+anchor_top = 0.39695
+anchor_right = 0.990305
+anchor_bottom = 0.98195
+margin_left = 0.447937
+margin_top = 0.000137329
+rect_pivot_offset = Vector2( 232, 351 )
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Screen" type="Panel" parent="Phone"]
+margin_left = 15.9492
+margin_top = 15.507
+margin_right = 217.949
+margin_bottom = 309.507
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextIcon" type="TextureButton" parent="Phone/Screen"]
+margin_left = 20.0
+margin_top = 8.0
+margin_right = 84.0
+margin_bottom = 72.0
+texture_normal = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Phone/Screen/TextIcon"]
+margin_left = -6.70953
+margin_top = 63.9754
+margin_right = 86.2905
+margin_bottom = 88.9754
+custom_fonts/normal_font = ExtResource( 9 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Messages"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CluckerIcon" type="TextureButton" parent="Phone/Screen"]
+margin_left = 120.0
+margin_top = 8.0
+margin_right = 184.0
+margin_bottom = 72.0
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Phone/Screen/CluckerIcon"]
+margin_left = 0.133789
+margin_top = 63.7214
+margin_right = 83.1338
+margin_bottom = 90.7214
+custom_fonts/normal_font = ExtResource( 9 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Clucker"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BluetoothSpeakerIcon" type="TextureButton" parent="Phone/Screen"]
+margin_left = 20.0
+margin_top = 120.0
+margin_right = 84.0
+margin_bottom = 184.0
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Phone/Screen/BluetoothSpeakerIcon"]
+margin_left = 8.10669
+margin_top = 62.1479
+margin_right = 70.1067
+margin_bottom = 87.1479
+custom_fonts/normal_font = ExtResource( 9 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextApp" type="Panel" parent="Phone/Screen"]
+visible = false
+margin_right = 203.0
+margin_bottom = 296.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Phone/Screen/TextApp"]
+margin_left = 17.8947
+margin_top = 96.8421
+margin_right = 219.895
+margin_bottom = 233.842
+text = "This space for rent
+
+48 hours is shorter than I thought"
+
+[node name="CluckerApp" type="Panel" parent="Phone/Screen"]
+visible = false
+margin_right = 202.0
+margin_bottom = 294.0
+custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Phone/Screen/CluckerApp"]
+margin_left = 4.41882
+margin_top = 6.47296
+margin_right = 197.419
+margin_bottom = 46.473
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CluckInput" type="ColorRect" parent="Phone/Screen/CluckerApp"]
+margin_left = 8.41882
+margin_top = 10.0
+margin_right = 192.419
+margin_bottom = 42.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Phone/Screen/CluckerApp/CluckInput"]
+margin_left = 5.0
+margin_top = 6.0
+margin_right = 139.0
+margin_bottom = 33.0
+custom_fonts/normal_font = ExtResource( 9 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Click to post"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PostButton" type="TextureButton" parent="Phone/Screen/CluckerApp/CluckInput"]
+margin_right = 184.0
+margin_bottom = 33.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Phone/Screen/CluckerApp"]
+margin_left = 8.0
+margin_top = 54.0
+margin_right = 193.0
+margin_bottom = 286.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Phone/Screen/CluckerApp/ScrollContainer"]
+margin_bottom = 232.0
+size_flags_vertical = 3
+custom_constants/separation = 60
+
+[node name="BluetoothSpeakerApp" type="Panel" parent="Phone/Screen"]
+visible = false
+margin_right = 202.0
+margin_bottom = 295.0
+custom_styles/panel = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Phone/Screen/BluetoothSpeakerApp"]
+margin_left = 14.7805
+margin_top = 8.83624
+margin_right = 189.781
+margin_bottom = 32.8362
+custom_fonts/normal_font = ExtResource( 9 )
+text = "Bluetooth Speaker"
+
+[node name="Button" type="Button" parent="Phone/Screen/BluetoothSpeakerApp"]
+margin_left = 4.0
+margin_top = 69.6765
+margin_right = 199.0
+margin_bottom = 89.6765
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+toggle_mode = true
+text = "Clubbing in the Club Tonight"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Phone/Screen/BluetoothSpeakerApp"]
+margin_left = 4.46332
+margin_top = 97.9372
+margin_right = 199.463
+margin_bottom = 117.937
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+toggle_mode = true
+text = "Bubbles and Rainbows"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Phone/Screen/BluetoothSpeakerApp"]
+margin_left = 2.14685
+margin_top = 122.492
+margin_right = 197.147
+margin_bottom = 142.492
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+toggle_mode = true
+text = "That Coffee Shop"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="Phone/Screen/BluetoothSpeakerApp"]
+margin_left = 3.07343
+margin_top = 148.899
+margin_right = 198.073
+margin_bottom = 168.899
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+toggle_mode = true
+text = "Cigarettes at Dawn"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Phone/Screen/BluetoothSpeakerApp"]
+margin_left = 31.463
+margin_top = 231.507
+margin_right = 171.463
+margin_bottom = 247.507
+value = 100.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Phone/Screen/BluetoothSpeakerApp"]
+margin_left = 68.433
+margin_top = 210.044
+margin_right = 123.433
+margin_bottom = 226.044
+text = "Volume"
+
+[node name="LockScreen" type="TextureButton" parent="Phone"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 218.0
+margin_bottom = 310.0
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HomeButton" type="ColorRect" parent="Phone"]
+margin_left = 103.992
+margin_top = 324.408
+margin_right = 134.992
+margin_bottom = 342.408
+color = Color( 0.0666667, 0.0627451, 0.0627451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="Phone/HomeButton"]
+margin_right = 32.0
+margin_bottom = 19.0
+
+[node name="LockButton" type="ColorRect" parent="Phone"]
+margin_left = 232.394
+margin_top = 14.6213
+margin_right = 237.394
+margin_bottom = 54.6213
+color = Color( 0.443137, 0.427451, 0.427451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="Phone/LockButton"]
+margin_left = -13.0
+margin_right = 9.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextBox" type="Panel" parent="."]
+visible = false
+margin_left = 139.0
+margin_top = 416.0
+margin_right = 869.0
+margin_bottom = 591.0
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextBox"]
+margin_left = 16.0
+margin_top = 39.0
+margin_right = 713.0
+margin_bottom = 157.0
+custom_fonts/normal_font = ExtResource( 9 )
+bbcode_enabled = true
+bbcode_text = "[center]Test text why is this even showing[/center]"
+text = "Test text why is this even showing"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="TextBox"]
+margin_right = 729.0
+margin_bottom = 176.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Customization" type="Panel" parent="."]
+margin_left = 134.0
+margin_top = 7.0
+margin_right = 921.0
+margin_bottom = 595.0
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" parent="Customization" instance=ExtResource( 10 )]
+position = Vector2( 396.268, 335.034 )
+scale = Vector2( 3, 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Customization"]
+margin_left = 262.339
+margin_top = 39.1694
+margin_right = 516.339
+margin_bottom = 71.1694
+rect_pivot_offset = Vector2( 226.548, 58.0837 )
+custom_fonts/normal_font = ExtResource( 9 )
+text = "Character Customization"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Customization"]
+margin_left = 582.203
+margin_top = 228.304
+margin_right = 696.203
+margin_bottom = 260.304
+rect_pivot_offset = Vector2( 226.548, 58.0837 )
+custom_fonts/normal_font = ExtResource( 9 )
+text = "Body Shape"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Customization"]
+margin_left = 106.665
+margin_top = 157.758
+margin_right = 201.665
+margin_bottom = 189.758
+rect_pivot_offset = Vector2( 226.548, 58.0837 )
+custom_fonts/normal_font = ExtResource( 9 )
+text = "Skin Tone"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Customization"]
+margin_left = 578.395
+margin_top = 299.084
+margin_right = 701.395
+margin_bottom = 331.084
+rect_pivot_offset = Vector2( 226.548, 58.0837 )
+custom_fonts/normal_font = ExtResource( 9 )
+text = "Shirt Color"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Customization"]
+margin_left = 589.058
+margin_top = 44.9637
+margin_right = 693.058
+margin_bottom = 76.9637
+rect_pivot_offset = Vector2( 226.548, 58.0837 )
+custom_fonts/normal_font = ExtResource( 9 )
+text = "Hair Style"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Customization"]
+margin_left = 590.528
+margin_top = 117.003
+margin_right = 694.528
+margin_bottom = 149.003
+rect_pivot_offset = Vector2( 226.548, 58.0837 )
+custom_fonts/normal_font = ExtResource( 9 )
+text = "Hair Color"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="Customization"]
+margin_left = 582.595
+margin_top = 401.988
+margin_right = 703.595
+margin_bottom = 433.988
+rect_pivot_offset = Vector2( 226.548, 58.0837 )
+custom_fonts/normal_font = ExtResource( 9 )
+text = "Pants Color"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HairNext" type="Button" parent="Customization"]
+margin_left = 676.0
+margin_top = 77.828
+margin_right = 708.0
+margin_bottom = 106.828
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HairPrev" type="Button" parent="Customization"]
+margin_left = 571.0
+margin_top = 78.828
+margin_right = 605.0
+margin_bottom = 107.828
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SkinTone" type="HSlider" parent="Customization"]
+margin_left = 51.1094
+margin_top = 177.437
+margin_right = 268.109
+margin_bottom = 222.437
+min_value = 0.01
+max_value = 0.99
+step = 0.01
+value = 0.99
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BodyNext" type="Button" parent="Customization"]
+margin_left = 656.517
+margin_top = 260.032
+margin_right = 687.517
+margin_bottom = 291.032
+text = ">"
+
+[node name="BodyPrev" type="Button" parent="Customization"]
+margin_left = 581.22
+margin_top = 260.495
+margin_right = 612.22
+margin_bottom = 292.495
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HairR" type="HSlider" parent="Customization"]
+margin_left = 574.32
+margin_top = 132.548
+margin_right = 703.32
+margin_bottom = 172.548
+max_value = 1.0
+step = 0.01
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HairG" type="HSlider" parent="Customization"]
+margin_left = 574.32
+margin_top = 161.534
+margin_right = 703.32
+margin_bottom = 201.534
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="HairB" type="HSlider" parent="Customization"]
+margin_left = 572.85
+margin_top = 190.0
+margin_right = 701.85
+margin_bottom = 230.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="ShirtR" type="HSlider" parent="Customization"]
+margin_left = 574.111
+margin_top = 312.375
+margin_right = 703.111
+margin_bottom = 352.375
+max_value = 1.0
+step = 0.01
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShirtG" type="HSlider" parent="Customization"]
+margin_left = 574.846
+margin_top = 338.421
+margin_right = 703.846
+margin_bottom = 378.421
+max_value = 1.0
+step = 0.01
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShirtB" type="HSlider" parent="Customization"]
+margin_left = 574.846
+margin_top = 364.682
+margin_right = 703.846
+margin_bottom = 404.682
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="PantsR" type="HSlider" parent="Customization"]
+margin_left = 572.306
+margin_top = 416.163
+margin_right = 701.306
+margin_bottom = 456.163
+max_value = 1.0
+step = 0.01
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PantsG" type="HSlider" parent="Customization"]
+margin_left = 572.306
+margin_top = 442.944
+margin_right = 701.306
+margin_bottom = 482.944
+max_value = 1.0
+step = 0.01
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PantsB" type="HSlider" parent="Customization"]
+margin_left = 572.306
+margin_top = 472.145
+margin_right = 701.306
+margin_bottom = 512.145
+max_value = 1.0
+step = 0.01
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DoneButton" type="Button" parent="Customization"]
+margin_left = 581.0
+margin_top = 524.0
+margin_right = 696.0
+margin_bottom = 572.0
+text = "DONE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RandoButton" type="Button" parent="Customization"]
+margin_left = 182.0
+margin_top = 519.0
+margin_right = 353.0
+margin_bottom = 564.0
+text = "Randomize"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 919.0
+margin_top = 9.0
+margin_right = 1004.0
+margin_bottom = 70.0
+custom_styles/panel = SubResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+margin_left = 5.7002
+margin_top = 7.85738
+margin_right = 80.7002
+margin_bottom = 54.8574
+custom_fonts/normal_font = SubResource( 14 )
+text = "300"
+
+[node name="Score" type="Panel" parent="."]
+visible = false
+margin_left = 204.913
+margin_top = 126.034
+margin_right = 847.913
+margin_bottom = 476.034
+custom_styles/panel = SubResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Score"]
+margin_left = 207.0
+margin_top = 20.0
+margin_right = 438.0
+margin_bottom = 81.0
+custom_fonts/normal_font = SubResource( 17 )
+text = "GAME OVER"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Score"]
+margin_left = 103.705
+margin_top = 153.287
+margin_right = 535.705
+margin_bottom = 214.287
+custom_fonts/normal_font = SubResource( 17 )
+text = "Final Score:"
+[connection signal="button_up" from="Phone/Screen/TextIcon" to="." method="_on_TextIcon_button_up"]
+[connection signal="button_up" from="Phone/Screen/CluckerIcon" to="." method="_on_CluckerIcon_button_up"]
+[connection signal="button_up" from="Phone/Screen/BluetoothSpeakerIcon" to="." method="_on_BluetoothSpeakerIcon_button_up"]
+[connection signal="button_up" from="Phone/Screen/CluckerApp/CluckInput/PostButton" to="." method="_on_PostButton_button_up"]
+[connection signal="toggled" from="Phone/Screen/BluetoothSpeakerApp/Button" to="." method="_on_Button_toggled"]
+[connection signal="toggled" from="Phone/Screen/BluetoothSpeakerApp/Button2" to="." method="_on_Button2_toggled"]
+[connection signal="toggled" from="Phone/Screen/BluetoothSpeakerApp/Button3" to="." method="_on_Button3_toggled"]
+[connection signal="toggled" from="Phone/Screen/BluetoothSpeakerApp/Button4" to="." method="_on_Button4_toggled"]
+[connection signal="value_changed" from="Phone/Screen/BluetoothSpeakerApp/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="button_up" from="Phone/LockScreen" to="." method="_on_LockScreen_button_up"]
+[connection signal="button_up" from="Phone/HomeButton/TextureButton" to="." method="_on_Home_button_up"]
+[connection signal="button_up" from="Phone/LockButton/TextureButton" to="." method="_on_TextureButton_button_up"]
+[connection signal="button_up" from="TextBox/TextureButton" to="." method="_on_Textbox_button_up"]
+[connection signal="button_up" from="Customization/HairNext" to="." method="_on_HairNext_button_up"]
+[connection signal="button_up" from="Customization/HairPrev" to="." method="_on_HairPrev_button_up"]
+[connection signal="value_changed" from="Customization/SkinTone" to="." method="_on_SkinTone_value_changed"]
+[connection signal="button_up" from="Customization/BodyNext" to="." method="_on_BodyNext_button_up"]
+[connection signal="button_up" from="Customization/BodyPrev" to="." method="_on_BodyPrev_button_up"]
+[connection signal="value_changed" from="Customization/HairR" to="." method="_on_HairR_value_changed"]
+[connection signal="value_changed" from="Customization/HairG" to="." method="_on_HairG_value_changed"]
+[connection signal="value_changed" from="Customization/HairB" to="." method="_on_HairB_value_changed"]
+[connection signal="value_changed" from="Customization/ShirtR" to="." method="_on_ShirtR_value_changed"]
+[connection signal="value_changed" from="Customization/ShirtG" to="." method="_on_ShirtG_value_changed"]
+[connection signal="value_changed" from="Customization/ShirtB" to="." method="_on_ShirtB_value_changed"]
+[connection signal="value_changed" from="Customization/PantsR" to="." method="_on_PantsR_value_changed"]
+[connection signal="value_changed" from="Customization/PantsG" to="." method="_on_PantsG_value_changed"]
+[connection signal="value_changed" from="Customization/PantsB" to="." method="_on_PantsB_value_changed"]
+[connection signal="pressed" from="Customization/DoneButton" to="." method="_on_DoneButton_pressed"]
+[connection signal="pressed" from="Customization/RandoButton" to="." method="_on_RandoButton_pressed"]

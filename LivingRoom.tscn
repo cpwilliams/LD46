@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Arts/Room.png" type="Texture" id=1]
+[ext_resource path="res://LivingRoom.gd" type="Script" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Character.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 815.151, 36.8757 )
+
+[node name="LivingRoom" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Radio" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
+autoplay = true
+
+[node name="Room" type="Sprite" parent="."]
+position = Vector2( 750, 300 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 48.8648, -2.33112 )
+polygon = PoolVector2Array( -49.1826, 603.074, 151, 203, 1252.03, 202.618, 1455.65, 609.764, 1460, -13, -68, -11, -87, 601 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 741.348, 672.906 )
+shape = SubResource( 1 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 635.02, 524.061 )
+speed = 250
+
+[node name="Guests" type="YSort" parent="YSort"]
+
+[node name="Character" parent="YSort/Guests" instance=ExtResource( 4 )]
+position = Vector2( 1064.04, 328.112 )
+
+[node name="Character2" parent="YSort/Guests" instance=ExtResource( 4 )]
+position = Vector2( 692.524, 238.058 )
+
+[node name="Character3" parent="YSort/Guests" instance=ExtResource( 4 )]
+position = Vector2( 417.449, 302.514 )
+
+[node name="ExitArea" type="Area2D" parent="."]
+position = Vector2( 130.454, 381.826 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ExitArea"]
+position = Vector2( -6.76184, -0.307343 )
+polygon = PoolVector2Array( -56.3001, 84.3124, 34.1162, -95.05, 106.155, -66.3814, 17.2091, 119.597 )
+[connection signal="body_entered" from="ExitArea" to="." method="_on_ExitArea_body_entered"]
